@@ -6,8 +6,8 @@ body {
 #wrapper {
     padding: 30px;
     margin-top: 20px;
-    border: 5px solid;
-    border-color: black;
+    /* border: 5px solid;
+    border-color: black; */
 }
 
 #controlButtons {
@@ -66,5 +66,12 @@ th {
 
 #winPercent{
     text-align: center;
+    justify-content: center;
+}
+
+#board {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
 }

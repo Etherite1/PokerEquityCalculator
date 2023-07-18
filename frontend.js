@@ -146,9 +146,15 @@ function createGenericPlayer(index)
     card0.addEventListener("click", function (e) {
         if(card0.childNodes[0].nodeName == "IMG") // currently is back of card
         {
+            var input = "";
+            while(true) 
+            { 
+                input = prompt("Enter your card: ");
+                if(input == null) return;
+                if(!checkValid(input)) alert("That was not a valid card!");
+                else break;
+            }
             card0.removeChild(card0.lastChild);
-            var input = prompt("Enter your card: ");
-            while(!checkValid(input)) input = prompt("Enter your card: ");
             input = input[0].toUpperCase() + input[1].toLowerCase();
             const makeCard = createCard(input[0], input[1]);
             card0.appendChild(makeCard);
@@ -168,9 +174,15 @@ function createGenericPlayer(index)
     card1.addEventListener("click", function (e) {
         if(card1.childNodes[0].nodeName == "IMG") // currently is back of card
         {
+            var input = "";
+            while(true) 
+            { 
+                input = prompt("Enter your card: ");
+                if(input == null) return;
+                if(!checkValid(input)) alert("That was not a valid card!");
+                else break;
+            }
             card1.removeChild(card1.lastChild);
-            var input = prompt("Enter your card: ")
-            while(!checkValid(input)) input = prompt("Enter your card: ");
             input = input[0].toUpperCase() + input[1].toLowerCase();
             const makeCard = createCard(input[0], input[1]);
             card1.appendChild(makeCard);
@@ -193,6 +205,49 @@ function createGenericPlayer(index)
 
 createGenericPlayer(0);
 createGenericPlayer(1);
+
+const boardSelector = document.querySelector("#board");
+
+for(let i = 0; i < 5; i++)
+{
+    const card = document.createElement("div");
+    card.id = "board" + i;
+    card.classList.add("card");
+    boardSelector.appendChild(card);
+
+    const card_back = document.createElement("img");
+    card_back.src = "img/card_back.png";
+
+    card.appendChild(card_back);
+
+    card.addEventListener("click", function(e) {
+        if(card.childNodes[0].nodeName == "IMG") // currently is back of card
+        {
+            var input = "";
+            while(true) 
+            { 
+                input = prompt("Enter your card: ");
+                if(input == null) return;
+                if(!checkValid(input)) alert("That was not a valid card!");
+                else break;
+            }
+            card.removeChild(card.lastChild);
+            input = input[0].toUpperCase() + input[1].toLowerCase();
+            const makeCard = createCard(input[0], input[1]);
+            card.appendChild(makeCard);
+            deadCards.add(input);
+            board[i] = input;
+        }
+        else
+        {
+            while(card.childNodes.length > 0) card.removeChild(card.lastChild);
+            card.appendChild(card_back);
+            deadCards.delete(board[i]);
+            board[i] = "-1";
+        }
+        recalcEquity();
+    });
+}
 
 controlButtons.addEventListener("click", function (e) {
     choice = e.target['id'];

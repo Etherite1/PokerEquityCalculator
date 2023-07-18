@@ -30,11 +30,6 @@ body {
     color: green;
 }
 
-#clearBoard {
-    background-color: grey;
-    color: black;
-}
-
 #removePlayer {
     background-color: lightcoral;
     color: red;

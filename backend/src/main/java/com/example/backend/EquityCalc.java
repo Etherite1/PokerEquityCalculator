@@ -13,7 +13,7 @@ public class EquityCalc
 
     public static void main(String[] args)
     {
-        System.out.println(getEquities("Tc3h", "-1", "Td9s", "2cAd", "As6c", "-1", "7d4d", "Ah7c", "8s8c", "6d Ts 2h -1 -1"));
+        System.out.println(getEquities("Tc3h", "-1-1", "Td9s", "2cAd", "As6c", "-1-1", "7d4d", "Ah7c", "8s8c", "6d Ts 2h -1 -1"));
     }
 
     public static String getEquities(String str0, String str1, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String strBoard)
@@ -23,7 +23,7 @@ public class EquityCalc
 
         for(int i = 0; i < 9; i++)
         {
-            if(stringHands[i].equals("-1"))
+            if(stringHands[i].equals("-1-1"))
             {
                 hands.add(null);
                 continue;

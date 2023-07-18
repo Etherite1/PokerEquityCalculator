@@ -1,0 +1,75 @@
+body {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    background-color: lightblue;
+}
+
+#wrapper {
+    padding: 30px;
+    margin-top: 20px;
+    border: 5px solid;
+    border-color: black;
+}
+
+#controlButtons {
+    display: flex;
+    justify-content: center;
+    align-items: right;
+    flex-direction: row;
+}
+
+#addPlayer, #clearBoard, #removePlayer {
+    border-radius: 4px;
+    font-size: 20px;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#addPlayer {
+    background-color: lightgreen;
+    color: green;
+}
+
+#clearBoard {
+    background-color: grey;
+    color: black;
+}
+
+#removePlayer {
+    background-color: lightcoral;
+    color: red;
+}
+
+#handContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.card {
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+    margin: 10px;
+    display: block;
+}
+
+.text-center {
+    text-align: center!important;
+}
+
+th {
+    display: table-cell;
+}
+
+
+#cardPair {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#winPercent{
+    text-align: center;
+    justify-content: center;
+}
